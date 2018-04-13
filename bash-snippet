@@ -1,4 +1,10 @@
-# MOUNT VSS
+### Dump info
+fdisk -l disk.dd 
+mount -o ro,loop,offset=$((512*xxx)) disk.dd mounted
+vshadowinfo disk.dd
+
+
+### MOUNT VSS
 apt install libvshadow-utils
 mkdir all_vss
 mkdir current_vss
