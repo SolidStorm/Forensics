@@ -1,0 +1,11 @@
+# MOUNT VSS
+apt install libvshadow-utils
+mkdir all_vss
+mkdir current_vss
+
+losetup  -fP disk.dd 
+# if partition 2 contains OS
+vshadowinfo /dev/loop0p2 
+vshadowmount /dev/loop0p2 all_vss
+mount -o ro,loop vss_all/vss1 current_vss
+
